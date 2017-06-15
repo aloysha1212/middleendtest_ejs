@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EJS App</title>
+	<style type="text/css">
+		.clear{
+			clear: both;
+		}
+		section.container {
+		  margin: 0 auto;
+		  width: 60%;
+		}
+		.leftpanel, .rightpanel {
+		  border: 1px solid;
+		  float: left;
+		  min-height: 450px;
+		  position: relative;
+		}
+		.leftpanel {
+		  width: 30%;
+		  background-color: #bfbfbf;
+		}
+		.rightpanel {
+		  background-color: #e6e6e6;
+		  /*padding: 37px;*/
+		  width: 60%;
+		}
+		.content {
+		  margin: 20px;
+		}
+		.opt_btn {
+		  padding: 20px 0;
+		}
+		button {
+		  background-color: #acacac;
+		  border-color: #777 currentcolor;
+		  border-style: solid none;
+		  border-width: 1px medium;
+		  padding: 14px 0;
+		  width: 100%;
+		  font-weight: 700;
+		  font-family: arial,sans-serif;
+		}
+		.quantity {
+		  border-bottom: 1px solid #777;
+		  border-top: 1px solid #777;
+		  padding: 10px 0;
+		  text-align: center;
+		}
+		.quantity label {
+		  display: block;
+		  text-align: center;
+		  width: 100%;
+		}
+		.quantity input {
+		  background-color: #d9d9d9;
+		  border: 1px solid #777;
+		  margin: 5px auto 0;
+		  text-align: center;
+		}
+		.obj1_caption > h4 {
+		  bottom: 0;
+		  padding: 10px;
+		  position: absolute;
+		  border-top: 1px solid #777;
+		  border-right: 1px solid #777;
+		  border-bottom: 1px solid #777;
+		  border-left: none;
+		  background-color: #bfbfbf;
+		}
+		.items {
+		  background-color: #acacac;
+		  margin: 20px 0;
+		}
+		.items p {
+		  background-color: #acacac;
+		  display: inline-block;
+		  padding: 0 13px;
+		  text-align: center;
+		  width: 69%;
+		}
+		.items span {
+		  background-color: #cfcfcf;
+		  border-radius: 20px;
+		  display: inline-block;
+		  margin: 0 20px;
+		  padding: 5px 10px;
+		  text-align: left;
+		}
+		.obj3_caption > h4 {
+		  border-color: #777 currentcolor #777 #777;
+		  border-style: solid none solid solid;
+		  border-width: 1px medium 1px 1px;
+		  bottom: 0;
+		  padding: 10px;
+		  position: absolute;
+		  right: 0;
+		}
+		.content2 {
+		  margin-top: 30px;
+		  text-align: center;
+		}
+		.content2 a {
+		  margin: 0 16px;
+		  text-decoration: none;
+		}
+		.obj2 {
+		  background-color: #acacac;
+		  border-left: 1px solid #777;
+		  border-right: 1px solid #777;
+		  min-height: 450px;
+		  position: absolute;
+		  /*right: -129px;*/
+		  /*right: 0;*/
+		  left: 239px;
+		  top: 0;
+		  z-index: 99999;
+		  display: none;
+		}
+		.obj2 > h4 {
+		  border-bottom: 1px solid #777;
+		  border-left: 1px solid #777;
+		  border-top: 1px solid #777;
+		  bottom: 0;
+		  padding: 10px;
+		  position: absolute;
+		  right: 0;
+		  background-color: #bfbfbf;
+		}
+		.dropdown select {
+		  margin: 35px 16px;
+		  width: 95px;
+		}
+		#B{
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.snippet.min.js"></script> -->
+	<!-- <script type="text/javascript" src="js/scripts.js"></script> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/jquery.snippet.min.css"/> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/styles.css"/> -->
+	<!-- <script src="ejs.js"></script> -->
+</head>
+<body>
+<section class="container">
+	<div class="leftpanel">
+		<div class="obj1">
+			<div class="opt_btn">
+				<button onclick="showobj2()" class="obj2tog">Option</button>
+			</div>
+			<div class="quantity">
+				<label>Quantity</label>
+				<input type="text" name="type_here" id="typehere" placeholder="Type Here" /> 
+			</div>
+		</div>
+		<div class="obj2">
+			<div class="dropdown">
+				<select name="dropdown" class="contentype">
+					<!-- <option>Dropdown</option> -->
+					<option value="A">A</option>
+					<option value="B">B</option>
+				</select>
+			</div>
+			<h4>obj2</h4>
+		</div>
+		<div class="obj1_caption">
+			<h4>obj1</h4>
+		</div>
+	</div>
+	<div class="rightpanel">
+		<div class="content" id="contentarea">
+			<div class="contentA contents"  id="A">
+				<!-- <div class="items">
+					<script type="text/template">
+					<% 
+						function entity(){
+							//$('#'+$(this).val()).show('slow');
+							for (var i = 0; i <= $('#typehere').val(); i++) {
+					%>
+							<span><%= i %></span><p>Item A<%= i %></p>
+					</script>
+
+					<span class="spn_entity"></span><p class="para_entity"></p>
+
+				</div> -->
+			</div>
+			<div class="contentB contents" id="B">
+				
+			</div>
+			 
+			<div class="content2">
+				<a href="#">
+					<img src="images/left_pagination.png" alt="move left" />
+				</a>
+				<a href="#">
+					<img src="images/right_pagination.png" alt="move right" />
+				</a>
+			</div>
+		</div>
+
+		<div class="obj3_caption">
+			<h4>obj3</h4>
+		</div>
+	</div>
+	<div class="clear"></div>
+</section>
+<script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<!-- <script type="text/javascript" src="paging.js"></script> -->
+<script src="lib/jquery.easyPaginate.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+<script type="text/javascript">
+	function showobj2(){
+		// $(".obj2").css({"display":"inline-block","right":"-129px","transition":"0.4 all"});
+		$(".obj2").toggle('slow');
+		jQuery(".obj2").click(function(){ return false; });
+		jQuery(".obj2tog").click(function(){ return false; });
+		jQuery(document).one("click", function() { jQuery(".obj2").fadeOut(); });
+	}
+	$(document).ready(function(){
+
+		    // $('#A').easyPaginate({
+		    //     paginateElement: 'div',
+		    //     elementsPerPage: 5,
+		    //     effect: 'climb'
+		    // });
+
+		$val = $('.contentype').val();
+		// alert($val);
+		$('.contentype').change(function () {
+			if ($('.contentype').val() == 'A') {
+				$('#A').show();
+				$('#B').hide();
+			}
+			if($('.contentype').val() == 'B'){
+				$('#B').show();
+				$('#A').hide();
+			}
+		});
+
+		// $('.content').paging({limit:5});
+		$('#typehere').change(function (){
+
+		   	// alert($('#typehere').val());
+			var containerA = document.getElementById("A");
+			var containerB = document.getElementById("B");
+
+
+			containerA.innerHTML = "";
+			containerB.innerHTML = "";
+			for (var i = 0; i <= $('#typehere').val(); i++) {
+				// alert($('#typehere').val());
+				// $(".spn_entity").append(i);
+				// $(".para_entity").append("Item A"+i);
+					var containerA = document.getElementById("A");
+					for (var i = 1; i <= $('#typehere').val(); i++) {
+					   containerA.innerHTML += '<div class="items"><span>'+i+'</span><p>Item A'+i+'</div>';
+					}
+					var containerB = document.getElementById("B");
+					for (var i = 1; i <= $('#typehere').val(); i++) {
+					   containerB.innerHTML += '<div class="items"><span>'+i+'</span><p>Item B'+i+'</div>';
+					}
+			}
+			// containerA.innerHTML += "</ul>";
+			// containerB.innerHTML += "</ul>";
+		});
+
+	});
+
+</script>
+</body>
+</html>
